@@ -1,0 +1,23 @@
+{
+  "name": "Hamza Mujeeb",
+  "title": "Full-Stack Developer & ML Engineer",
+  "tagline": "Building end-to-end solutions — from ML models to full-stack web apps.",
+  "bio": "Final-year Computer Science student at UIT University, Karachi, with a passion for building end-to-end software solutions. My expertise spans from training machine learning models with Python and XGBoost to crafting full-stack web applications with React, Express.js, and MongoDB.",
+  "email": "Hamzamujeeb196@gmail.com",
+  "phone": "+92-335-2868865",
+  "github": "https://github.com/Hmz-Mjb",
+  "linkedin": "https://linkedin.com/in/hamza-mujeeb-303792227",
+  "location": "Karachi, Pakistan",
+  "education": {
+    "degree": "BS Computer Science",
+    "university": "UIT University, Karachi",
+    "status": "Final Year",
+    "expected": "2026"
+  },
+  "coursework": [
+    "Object-Oriented Programming",
+    "Data Structures & Algorithms",
+    "Database Systems",
+    "Artificial Intelligence"
+  ]
+}

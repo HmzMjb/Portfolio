@@ -1,0 +1,363 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #C9A96E;
+  --color-primary-light: #dfc492;
+  --color-dark: #0a0a1a;
+  --color-dark-card: #12122a;
+  --color-dark-border: #1e1e3a;
+  --color-dark-surface: #16162e;
+  --color-text-muted: #94a3b8;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* ── Scroll-triggered fade-in ── */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Staggered children ── */
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.1s; }
+.stagger-3 { transition-delay: 0.15s; }
+.stagger-4 { transition-delay: 0.2s; }
+.stagger-5 { transition-delay: 0.25s; }
+.stagger-6 { transition-delay: 0.3s; }
+.stagger-7 { transition-delay: 0.35s; }
+.stagger-8 { transition-delay: 0.4s; }
+
+/* ── Slide from left / right ── */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Scale in ── */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Hero entrance ── */
+.hero-enter {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-enter-delay-1 { animation-delay: 0.1s; }
+.hero-enter-delay-2 { animation-delay: 0.25s; }
+.hero-enter-delay-3 { animation-delay: 0.4s; }
+.hero-enter-delay-4 { animation-delay: 0.55s; }
+.hero-enter-delay-5 { animation-delay: 0.7s; }
+
+@keyframes heroEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Floating animation ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+/* ── Gradient shimmer on text ── */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-text-animated {
+  background: linear-gradient(135deg, #C9A96E, #dfc492, #C9A96E, #f0d9a8);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease infinite;
+}
+
+/* ── Pulse glow ── */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0); }
+  50% { box-shadow: 0 0 20px 4px rgba(201, 169, 110, 0.15); }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* ── Typing cursor ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: var(--color-primary);
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Button shine effect ── */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.btn-shine:hover::after {
+  left: 120%;
+}
+
+/* ── Card hover glow ── */
+.card-glow {
+  transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-glow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(201, 169, 110, 0.1);
+}
+
+/* ── Nav underline animation ── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-primary);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ── Skill tag hover ── */
+.skill-tag {
+  transition: all 0.2s ease;
+}
+.skill-tag:hover {
+  transform: translateY(-1px);
+}
+
+/* ── Section divider line ── */
+.section-line {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+}
+
+/* ── Rotate icon on card hover ── */
+.icon-rotate {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.group:hover .icon-rotate {
+  transform: rotate(8deg) scale(1.15);
+}
+
+/* ── Feature list item fade-in ── */
+.feature-item {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.feature-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Bordered glow card for about ── */
+.about-glow {
+  position: relative;
+}
+.about-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(201,169,110,0.3), transparent 50%, rgba(201,169,110,0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.about-glow:hover::before {
+  opacity: 1;
+}
+
+/* ── Input focus slide ── */
+.input-animated {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.input-animated:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -4px rgba(201, 169, 110, 0.15);
+}
+
+/* ── Contact link card slide ── */
+.contact-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.contact-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(201, 169, 110, 0.3);
+}
+
+/* ── Badge pulse on hover ── */
+.badge-hover {
+  transition: all 0.25s ease;
+}
+.badge-hover:hover {
+  background-color: rgba(201, 169, 110, 0.12);
+  border-color: rgba(201, 169, 110, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ── Smooth counter text ── */
+@keyframes countFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.count-animate {
+  animation: countFade 0.5s ease forwards;
+}
+
+/* ── Section background pattern ── */
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(201,169,110,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Blur reveal on scroll ── */
+.blur-reveal {
+  filter: blur(8px);
+  opacity: 0;
+  transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.blur-reveal.visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+/* ── Tilt card ── */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ── Magnetic button ── */
+.magnetic-btn {
+  position: relative;
+  display: inline-block;
+}
+
+/* ── Custom cursor ── */
+@media (pointer: fine) {
+  *, a, button {
+    cursor: none !important;
+  }
+}
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}

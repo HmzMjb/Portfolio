@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "PakWheels Car Price Predictor",
+    "subtitle": "ML-Powered Price Estimation for the Pakistani Market",
+    "description": "An AI-powered used car price prediction system trained on ~90,000 PakWheels.com listings covering 48 brands and 292 models with an R\u00B2 score of 0.96.",
+    "tech": ["XGBoost", "FastAPI", "Flutter", "Python", "Pandas"],
+    "features": [
+      "XGBoost regression model achieving R\u00B2 score of 0.96, predicting prices in PKR",
+      "FastAPI backend with /predict and /options REST endpoints",
+      "Flutter cross-platform app (Android, iOS, Web, Desktop) with searchable dropdowns",
+      "Auto-populated from API with 1,471+ car titles and 121 registration cities"
+    ],
+    "github": "https://github.com/HmzMjb/Car-Price-Prediction",
+    "accent": "red"
+  },
+  {
+    "id": 2,
+    "title": "MAISON Perfume Store",
+    "subtitle": "Full-Stack Luxury E-Commerce Platform",
+    "description": "A full-stack luxury perfume e-commerce platform with role-based access control, Google OAuth, admin dashboard, and complete shopping experience.",
+    "tech": ["React", "Tailwind CSS", "Express.js", "MongoDB", "JWT"],
+    "features": [
+      "React + Tailwind CSS frontend with product filtering, cart, and wishlist",
+      "Express.js REST API with MongoDB, JWT auth, and Google OAuth 2.0",
+      "Admin dashboard with CRUD product management and order tracking",
+      "Checkout with COD/online payment, reviews, and newsletter subscription"
+    ],
+    "github": "https://github.com/HmzMjb/Perfume-Store",
+    "accent": "gold"
+  }
+]

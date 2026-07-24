@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Languages",
+    "icon": "Code2",
+    "skills": ["Python", "JavaScript", "Dart"],
+    "color": "blue"
+  },
+  {
+    "id": 2,
+    "title": "ML & Data Science",
+    "icon": "Brain",
+    "skills": ["XGBoost", "Random Forest", "SVM", "KNN", "Decision Trees", "PCA", "K-Means", "Pandas", "NumPy", "EDA"],
+    "color": "purple"
+  },
+  {
+    "id": 3,
+    "title": "Web Development",
+    "icon": "Globe",
+    "skills": ["React", "Tailwind CSS", "Express.js", "REST APIs", "JWT Auth", "Google OAuth", "MongoDB"],
+    "color": "emerald"
+  },
+  {
+    "id": 4,
+    "title": "Tools & Platforms",
+    "icon": "Wrench",
+    "skills": ["FastAPI", "Flutter", "Git / GitHub", "Jupyter", "Google Colab", "VS Code", "PyCharm"],
+    "color": "amber"
+  }
+]
