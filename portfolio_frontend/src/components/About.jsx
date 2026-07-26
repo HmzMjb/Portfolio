@@ -1,24 +1,10 @@
 import { GraduationCap, MapPin, Calendar } from 'lucide-react';
-import useCounter from '../hooks/useCounter';
-
-function StatCounter({ value, suffix, label }) {
-  const [ref, count] = useCounter(value, 2000);
-
-  return (
-    <div ref={ref} className="text-center">
-      <p className="font-heading text-3xl md:text-4xl font-bold text-primary">
-        {count}{suffix}
-      </p>
-      <p className="text-text-muted text-xs mt-1 uppercase tracking-wider">{label}</p>
-    </div>
-  );
-}
 
 export default function About() {
   return (
-    <section id="about" className="py-40 px-6">
+    <section id="about" className="py-28 px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="fade-in-up text-center mb-20">
+        <div className="fade-in-up text-center mb-14">
           <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs mb-4">
             About Me
           </p>
@@ -29,7 +15,7 @@ export default function About() {
           <div className="section-line mx-auto mt-5" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div className="slide-left">
             <div className="blur-reveal relative w-60 h-60 mx-auto md:mx-0 group">
               <div className="absolute inset-0 bg-primary/10 rounded-2xl rotate-6 transition-transform duration-500 group-hover:rotate-3" />
@@ -49,7 +35,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="slide-right space-y-7">
+          <div className="slide-right space-y-8">
             <p className="text-text-muted leading-relaxed">
               I'm a final-year Computer Science student at UIT University,
               Karachi, with a passion for building end-to-end software
@@ -64,15 +50,7 @@ export default function About() {
               and Flutter frontends.
             </p>
 
-            <div className="flex items-center justify-center md:justify-start gap-8 pt-4">
-              <StatCounter value={3} suffix="+" label="Projects" />
-              <div className="w-px h-10 bg-dark-border" />
-              <StatCounter value={10} suffix="+" label="Technologies" />
-              <div className="w-px h-10 bg-dark-border" />
-              <StatCounter value={2} suffix="+" label="Years Exp" />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 justify-items-center">
               {[
                 { icon: GraduationCap, title: 'BS Computer Science', sub: 'UIT University, Karachi' },
                 { icon: Calendar, title: 'Final Year', sub: 'Expected 2026' },
@@ -90,7 +68,7 @@ export default function About() {
               ))}
             </div>
 
-            <div className="pt-2">
+            <div>
               <h3 className="text-white font-heading font-semibold mb-3 text-sm">
                 Relevant Coursework
               </h3>

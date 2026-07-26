@@ -15,7 +15,7 @@ const LinkedinIcon = () => (
   </svg>
 );
 
-const roles = ['Full-Stack Developer', 'ML Engineer', 'CS Student'];
+const roles = ['Full-Stack Developer', 'ML Engineer', 'Data Science', 'CS Student'];
 const TYPING_SPEED = 80;
 const DELETING_SPEED = 50;
 const PAUSE_DURATION = 2000;
@@ -90,7 +90,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <p className="hero-enter hero-enter-delay-1 text-primary font-medium tracking-[0.25em] uppercase text-xs mb-6">
           Welcome to my portfolio
         </p>
@@ -100,7 +100,7 @@ export default function Hero() {
           <span className="gradient-text-animated">Mujeeb</span>
         </h1>
 
-        <p className="hero-enter hero-enter-delay-3 text-xl md:text-2xl text-text-muted font-light mb-6 tracking-wide h-9">
+        <p className="hero-enter hero-enter-delay-3 text-xl md:text-2xl text-text-muted font-light mb-8 tracking-wide h-9">
           <span className="text-white/80">{typedText}</span>
           <span className="typing-cursor" />
         </p>
@@ -111,7 +111,7 @@ export default function Hero() {
           to building full-stack web applications.
         </p>
 
-        <div className="hero-enter hero-enter-delay-4 flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 sm:mb-20">
+        <div className="hero-enter hero-enter-delay-4 flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-24">
           <MagneticButton
             href="#projects"
             className="btn-shine px-8 py-3 bg-primary text-dark font-semibold rounded-lg hover:bg-primary-light transition-all duration-300 shadow-lg shadow-primary/20 text-sm hover:shadow-primary/30 hover:shadow-xl"
@@ -126,7 +126,7 @@ export default function Hero() {
           </MagneticButton>
         </div>
 
-        <div className="hero-enter hero-enter-delay-5 flex items-center justify-center gap-3">
+        <div className="hero-enter hero-enter-delay-5 flex items-center justify-center gap-4">
           {[
             { icon: <GithubIcon />, href: 'https://github.com/Hmz-Mjb', label: 'GitHub' },
             { icon: <LinkedinIcon />, href: 'https://linkedin.com/in/hamza-mujeeb-303792227', label: 'LinkedIn' },

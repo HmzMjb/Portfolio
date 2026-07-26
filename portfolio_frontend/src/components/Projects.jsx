@@ -50,65 +50,74 @@ function ProjectCard({ project, index }) {
 
   return (
     <div
-      className={`fade-in-up stagger-${index + 1} tilt-card group bg-dark-card border border-dark-border rounded-2xl p-6 md:p-10 card-glow`}
+      className={`fade-in-up stagger-${index + 1} tilt-card group bg-dark-card/40 border border-dark-border/30 hover:border-primary/20 rounded-2xl p-8 md:p-10 card-glow transition-colors duration-300`}
       style={style}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="flex items-center justify-between mb-5">
-        <div className="flex items-center gap-4">
-          <div
-            className={`w-11 h-11 rounded-lg bg-gradient-to-br ${project.accent} flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}
-          >
-            <Icon size={20} className="text-primary" />
+      <div className="md:grid md:grid-cols-[1.2fr_1fr] md:gap-10 items-start">
+        <div>
+          <div className="flex items-center justify-between mb-5">
+            <div className="flex items-center gap-4">
+              <div
+                className={`w-11 h-11 rounded-lg bg-gradient-to-br ${project.accent} flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}
+              >
+                <Icon size={20} className="text-primary" />
+              </div>
+              <div>
+                <h3 className="font-heading text-lg font-bold text-white">
+                  {project.title}
+                </h3>
+                <p className="text-text-muted text-xs mt-0.5">
+                  {project.subtitle}
+                </p>
+              </div>
+            </div>
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-lg border border-dark-border/40 text-text-muted/50 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 hover:scale-110 shrink-0"
+              aria-label="View on GitHub"
+            >
+              <GithubIcon />
+            </a>
           </div>
-          <div>
-            <h3 className="font-heading text-lg font-bold text-white">
-              {project.title}
-            </h3>
-            <p className="text-text-muted text-xs mt-0.5">
-              {project.subtitle}
-            </p>
+
+          <p className="text-text-muted/80 text-sm leading-relaxed mb-6">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2 pt-1">
+            {project.tech.map((t) => (
+              <span
+                key={t}
+                className="skill-tag px-3 py-1.5 text-[11px] font-medium text-primary/70 bg-primary/5 border border-primary/10 rounded-full cursor-default"
+              >
+                {t}
+              </span>
+            ))}
           </div>
         </div>
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-2.5 rounded-lg border border-dark-border/40 text-text-muted/50 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 hover:scale-110 shrink-0"
-          aria-label="View on GitHub"
-        >
-          <GithubIcon />
-        </a>
-      </div>
 
-      <p className="text-text-muted/80 text-sm leading-relaxed mb-5">
-        {project.description}
-      </p>
-
-      <ul className="space-y-1.5 mb-6">
-        {project.features.map((feature, i) => (
-          <li
-            key={i}
-            className="flex items-start gap-2 text-text-muted/70 text-sm"
-          >
-            <span className="text-primary/60 mt-1 shrink-0 text-[10px]">
-              &#9670;
-            </span>
-            {feature}
-          </li>
-        ))}
-      </ul>
-
-      <div className="flex flex-wrap gap-1.5">
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            className="skill-tag px-2.5 py-1 text-[11px] font-medium text-primary/70 bg-primary/5 border border-primary/10 rounded-full cursor-default"
-          >
-            {t}
-          </span>
-        ))}
+        <div className="mt-6 md:mt-0">
+          <h4 className="text-white font-heading font-semibold text-sm mb-4">
+            Key Features
+          </h4>
+          <ul className="space-y-3">
+            {project.features.map((feature, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2.5 text-text-muted/70 text-sm leading-relaxed"
+              >
+                <span className="text-primary/60 mt-1 shrink-0 text-[10px]">
+                  &#9670;
+                </span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -116,9 +125,9 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-40 px-6">
+    <section id="projects" className="py-28 px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="fade-in-up text-center mb-20">
+        <div className="fade-in-up text-center mb-14">
           <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs mb-4">
             Projects
           </p>
@@ -129,7 +138,7 @@ export default function Projects() {
           <div className="section-line mx-auto mt-5" />
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-14">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

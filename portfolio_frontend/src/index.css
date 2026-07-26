@@ -348,16 +348,3 @@ body {
   position: relative;
   display: inline-block;
 }
-
-/* ── Custom cursor ── */
-@media (pointer: fine) {
-  *, a, button {
-    cursor: none !important;
-  }
-}
-.custom-cursor {
-  pointer-events: none;
-  position: fixed;
-  z-index: 9999;
-  mix-blend-mode: difference;
-}

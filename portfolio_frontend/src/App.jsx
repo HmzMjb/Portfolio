@@ -6,7 +6,6 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
 
 function App() {
   useEffect(() => {
@@ -31,7 +30,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-dark">
-      <CustomCursor />
       <Navbar />
       <Hero />
       <About />

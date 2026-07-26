@@ -75,9 +75,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-40 px-6 bg-dark-surface/50">
+    <section id="contact" className="py-28 px-6 bg-dark-surface/50">
       <div className="max-w-5xl mx-auto">
-        <div className="fade-in-up text-center mb-20">
+        <div className="fade-in-up text-center mb-14">
           <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs mb-4">
             Get in Touch
           </p>
@@ -88,15 +88,15 @@ export default function Contact() {
           <div className="section-line mx-auto mt-5" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-          <div className="slide-left space-y-8">
-            <p className="text-text-muted leading-relaxed">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20">
+          <div className="slide-left space-y-12">
+            <p className="text-text-muted leading-relaxed text-[15px]">
               I'm currently open to software engineering internship and
               full-time opportunities. Whether you have a question or just
               want to say hi, feel free to reach out!
             </p>
 
-            <div className="space-y-3">
+            <div className="space-y-6">
               {contactLinks.map((item, i) => {
                 const Icon = item.icon;
                 const CustomIcon = item.customIcon;
@@ -107,9 +107,9 @@ export default function Contact() {
                     href={item.href}
                     target={isExternal ? '_blank' : undefined}
                     rel={isExternal ? 'noopener noreferrer' : undefined}
-                    className={`stagger-${i + 1} fade-in-up flex items-center gap-4 p-4 bg-dark-card border border-dark-border rounded-xl hover:border-primary/30 transition-all duration-300 group`}
+                    className={`stagger-${i + 1} fade-in-up flex items-center gap-4 p-5 bg-dark-card/40 border border-dark-border/30 hover:border-primary/20 rounded-xl transition-all duration-300 group`}
                   >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">
+                    <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">
                       {CustomIcon ? (
                         <CustomIcon />
                       ) : (
@@ -132,7 +132,7 @@ export default function Contact() {
 
           <div className="slide-right">
             <form
-              className="space-y-5 p-6 sm:p-8 bg-dark-card border border-dark-border rounded-2xl"
+              className="space-y-8 p-8 sm:p-12 bg-dark-card/40 border border-dark-border/30 hover:border-primary/20 rounded-2xl transition-colors duration-300"
               onSubmit={handleSubmit}
             >
               {status && (
@@ -153,7 +153,7 @@ export default function Contact() {
               )}
 
               <div>
-                <label className="block text-text-muted/60 text-[11px] uppercase tracking-wider mb-2">
+                <label className="block text-text-muted/60 text-xs uppercase tracking-wider mb-2">
                   Name
                 </label>
                 <input
@@ -162,11 +162,11 @@ export default function Contact() {
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   required
                   placeholder="Your name"
-                  className="w-full px-4 py-3 bg-dark-surface border border-dark-border rounded-lg text-white text-sm placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-5 py-4 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300"
                 />
               </div>
               <div>
-                <label className="block text-text-muted/60 text-[11px] uppercase tracking-wider mb-2">
+                <label className="block text-text-muted/60 text-xs uppercase tracking-wider mb-2">
                   Email
                 </label>
                 <input
@@ -175,26 +175,26 @@ export default function Contact() {
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-dark-surface border border-dark-border rounded-lg text-white text-sm placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-5 py-4 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300"
                 />
               </div>
               <div>
-                <label className="block text-text-muted/60 text-[11px] uppercase tracking-wider mb-2">
+                <label className="block text-text-muted/60 text-xs uppercase tracking-wider mb-2">
                   Message
                 </label>
                 <textarea
-                  rows={5}
+                  rows={6}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   required
                   placeholder="Your message..."
-                  className="w-full px-4 py-3 bg-dark-surface border border-dark-border rounded-lg text-white text-sm placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300 resize-none"
+                  className="w-full px-5 py-4 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300 resize-none"
                 />
               </div>
               <button
                 type="submit"
                 disabled={sending}
-                className="magnetic-btn btn-shine w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-dark font-semibold rounded-lg hover:bg-primary-light transition-all duration-300 shadow-lg shadow-primary/20 text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-primary/30 hover:shadow-xl"
+                className="magnetic-btn btn-shine w-full flex items-center justify-center gap-2 px-6 py-4 bg-primary text-dark font-semibold rounded-lg hover:bg-primary-light transition-all duration-300 shadow-lg shadow-primary/20 text-base disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-primary/30 hover:shadow-xl"
                 style={magneticStyle}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}

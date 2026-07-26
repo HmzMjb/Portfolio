@@ -14,7 +14,7 @@ const LinkedinIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-6 border-t border-dark-border/50">
+    <footer className="py-14 px-6 border-t border-dark-border/50">
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-5">
           <div className="flex items-center gap-2">
@@ -26,7 +26,7 @@ export default function Footer() {
             </span>
           </div>
 
-          <nav className="flex items-center gap-6">
+          <nav className="flex items-center gap-8">
             {[
               { label: 'Home', href: '#home' },
               { label: 'About', href: '#about' },
@@ -44,7 +44,7 @@ export default function Footer() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             {[
               { icon: <GithubIcon />, href: 'https://github.com/Hmz-Mjb', label: 'GitHub' },
               { icon: <LinkedinIcon />, href: 'https://linkedin.com/in/hamza-mujeeb-303792227', label: 'LinkedIn' },
