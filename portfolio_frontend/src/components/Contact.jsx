@@ -162,7 +162,7 @@ export default function Contact() {
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   required
                   placeholder="Your name"
-                  className="w-full px-5 py-4 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-5 py-7 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300"
                 />
               </div>
               <div>
@@ -175,7 +175,7 @@ export default function Contact() {
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required
                   placeholder="your@email.com"
-                  className="w-full px-5 py-4 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300"
+                  className="w-full px-5 py-7 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300"
                 />
               </div>
               <div>
@@ -183,12 +183,12 @@ export default function Contact() {
                   Message
                 </label>
                 <textarea
-                  rows={6}
+                  rows={8}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   required
                   placeholder="Your message..."
-                  className="w-full px-5 py-4 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300 resize-none"
+                  className="w-full px-5 py-7 bg-dark-surface border border-dark-border rounded-lg text-white text-base placeholder-gray-600 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/20 transition-all duration-300 resize-none"
                 />
               </div>
               <button

@@ -1,20 +1,12 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
 const router = express.Router();
 const dataPath = path.join(__dirname, '..', 'data', 'messages.json');
 
-function createTransporter() {
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS,
-    },
-  });
-}
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 router.post('/', async (req, res) => {
   const { name, email, message } = req.body;
@@ -40,9 +32,11 @@ router.post('/', async (req, res) => {
   }
 
   try {
-    const transporter = createTransporter();
-    await transporter.sendMail({
-      from: process.env.GMAIL_USER,
+    if (!resend) {
+      throw new Error('Resend API key not configured');
+    }
+    const { error } = await resend.emails.send({
+      from: 'Portfolio <onboarding@resend.dev>',
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
       subject: `Portfolio Contact: ${name}`,
@@ -54,6 +48,11 @@ router.post('/', async (req, res) => {
         <p>${message}</p>
       `,
     });
+
+    if (error) {
+      return res.status(500).json({ error: 'Failed to send email: ' + error.message });
+    }
+
     res.json({ success: true, message: 'Message sent successfully' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to send email. Message was saved but email was not delivered.' });
